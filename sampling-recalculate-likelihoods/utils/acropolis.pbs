@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -N mpi
+#PBS -j oe
+#PBS -l procs=60,mem=500gb
+#PBS -V
+#PBS -m ae
+#PBS -M eisenhauer@policy-lab.org
+
+cd $PBS_O_WORKDIR
+
+export PYTHONEXEC=~/.conda/envs/sampling/bin/python
+
+source .envrc
+cd $PBS_O_WORKDIR
+
+mpiexec -n 1 -usize 50 $PYTHONEXEC create_sample.py -p 50 -s 100 -b 50 --distributed

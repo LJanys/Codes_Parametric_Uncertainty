@@ -1,0 +1,42 @@
+name: sampling
+
+channels:
+  - defaults
+  - conda-forge
+  - opensourceeconomics
+
+dependencies:
+  - python=3.8
+
+  - matplotlib=3.3
+
+  - black
+  - pdbpp
+  - pytest
+  - pytest-mpi
+  - click=7.1.2
+  - fastparquet=0.4
+  - python-snappy=0.5.4
+
+  - mpi4py=3.0.3
+  - cloudpickle=2.0
+
+  - chaospy=3.3.8 # to be compatible with old numpy
+  - numpoly=1.0.6 # to be compatible with old numpy
+
+  - estimagic=0.0.31
+  - bokeh <= 2.2.2 # needed for old estimagic to work
+  - jinja2 <= 2.11.2 # needed for old bokeh to work
+  - petsc4py=3.13 # needed for old estimagic imports to work
+  - pandas=1.1.4 # get rid of deprecation warnings
+  - numpy=1.19 # get rid of deprecation warnings
+  - numba=0.51.2 # get rid of deprecation warnings
+
+  - ipykernel=5.1.3
+  - jupyterlab=1.1.4
+  - joblib=1.1.1
+
+  - pip
+  - pip:
+    - pathos==0.2.6
+    - git+https://github.com/OpenSourceEconomics/respy.git@825b03fd1770109ab43fdc3b11827ef7e5a035ec
